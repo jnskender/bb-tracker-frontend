@@ -12,7 +12,7 @@ const options = {
   ],
   session: {
     jwt: true,
-    maxAge: 1000 * 100,
+    maxAge: 60 * 60 * 24 * 30,
   },
   callbacks: {
     session: async (session, user) => {

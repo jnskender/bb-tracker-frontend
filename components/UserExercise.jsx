@@ -7,6 +7,8 @@ import { CREATE_USER_EXERCISE, UPDATE_USER_EXERCISE } from "../lib/Models/UserEx
 import { SINGLE_USER_EXERCISE_QUERY } from "../lib/Models/UserExercises/queries/UserExerciseQueries"
 import { useRouter } from "next/router"
 import useForm from '../lib/useForm';
+import StyledButton from './Button';
+import styled from "styled-components"
 
 
 export default function UserExercise({ id, order, workout, exercise }) {
@@ -61,13 +63,18 @@ export default function UserExercise({ id, order, workout, exercise }) {
   if (loading) return <p>Loading...</p>
   if (error) return <p>Error : {error.message}</p>
 
+  const StyledInput = styled.input`
+    padding: 1rem;
+    margin: 1rem;
+  `
+
   return (
     <div>
       <form onSubmit={handleNext}>
         <h1>{data.userExercise.exercise.name}</h1>
         <label htmlFor="reps">Reps</label>
-        <input type="number" inputMode="numeric" pattern="[0-9]*" name="reps" value={inputs.reps} onChange={handleChange} />
-        <button type="submit">Next Exercise</button>
+        <StyledInput type="number" inputMode="numeric" pattern="[0-9]*" name="reps" value={inputs.reps} onChange={handleChange} />
+        <StyledButton type="submit">Next Exercise</StyledButton>
       </form>
     </div>
   )

@@ -3,30 +3,35 @@ import styled, { createGlobalStyle } from 'styled-components';
 import Header from './Header';
 const GlobalStyles = createGlobalStyle`
   html {
-    --maxWidth: 1000px;
-    --bs: 0 12px 24px 0 rgba(0,0,0,0.09);
-    box-sizing: border-box;
     font-size: 62.5%;
+    --middle-blue: #1687a7;
+    --dark-blue: #276678;
+    --light-blue: #d3e0ea;
+    --grey: #f6f5f5;
   }
 
   *, *:before, *:after{
     box-sizing: inherit;
+    margin: 0;
+    padding: 0;
   }
 
   body{
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    padding: 0;
-    margin: 0;
     font-size: 1.5rem;
     line-height:2;
   }
+
   a{
-    text-decoration:none;
-    color: var(--black);
-  }
-  a:hover{
+    color: var(--middle-blue);
     text-decoration: underline;
   }
+
+  nav a {
+    text-decoration: none;
+  }
+
+
   ul {
     list-style:none;
   }

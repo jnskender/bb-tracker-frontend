@@ -2,7 +2,7 @@ import { useQuery } from '@apollo/client'
 import gql from 'graphql-tag'
 import Link from 'next/link';
 import React from 'react'
-
+import styled from "styled-components"
 
 
 const SINGLE_PROGRAM_QUERY = gql`
@@ -20,6 +20,16 @@ const SINGLE_PROGRAM_QUERY = gql`
   }
 `
 
+const StyledExercise = styled.div`
+  h1{
+    text-align: center;
+  }
+  a{
+    font-size: 2rem;
+    font-weight: 500;
+  }
+`
+
 export default function SingleProgramPage({ slug }) {
   const { data, loading, error } = useQuery(SINGLE_PROGRAM_QUERY, {
     variables: {
@@ -32,8 +42,9 @@ export default function SingleProgramPage({ slug }) {
   const program = data.programs[0];
   const { workouts } = program;
   return (
-    <>
+    <StyledExercise>
       <h1>{program.name}</h1>
+      <h3>Exercises</h3>
       <ul>
         {workouts.length > 0 && workouts.map(workout => {
           return (
@@ -45,6 +56,6 @@ export default function SingleProgramPage({ slug }) {
           )
         })}
       </ul>
-    </>
+    </StyledExercise>
   )
 }

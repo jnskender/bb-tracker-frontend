@@ -5,6 +5,7 @@ import Link from 'next/link';
 import React from 'react'
 import { CREATE_USER_EXERCISE } from "../lib/Models/UserExercises/mutations/UserExerciseMutations"
 import { useRouter } from "next/router"
+import Button from './Button';
 
 const SINGLE_WORKOUT_QUERY = gql`
   query SINGLE_WORKOUT_QUERY($id: ID!){
@@ -69,7 +70,7 @@ export default function SingleWorkoutPage({ id }) {
           )
         })}
       </ul>
-      <button type="button" onClick={handleStart}>Start Workout</button>
+      <Button type="button" onClick={handleStart}>Start Workout</Button>
     </>
   )
 }

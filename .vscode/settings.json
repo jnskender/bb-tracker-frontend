@@ -3,5 +3,9 @@
     "activityBar.background": "#540950",
     "titleBar.activeBackground": "#760C70",
     "titleBar.activeForeground": "#FEFAFE"
-  }
+  },
+  "workbench.colorTheme": "Community Material Theme Ocean High Contrast",
+  "activityBar.background": "#540950",
+  "titleBar.activeBackground": "#760C70",
+  "titleBar.activeForeground": "#FEFAFE"
 }
